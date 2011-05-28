@@ -1,0 +1,9 @@
+development:
+  bucket: rhuberdeau
+  access_key_id: AKIAJTO3RUSW3LZMSDEQ
+  secret_access_key: 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
+  
+production:
+  bucket: fordan
+  access_key_id: AKIAJTO3RUSW3LZMSDEQ
+  secret_access_key: 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
