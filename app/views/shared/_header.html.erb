@@ -7,6 +7,7 @@
         <%= link_to 'Artwork', artworks_path %>
         <!--Subnav Starts Here-->
         <span>
+        	<% @artworks = Artwork.all %>
             <% @artworks.each do |artwork|%>
 			  <%= link_to "#{artwork.name}", artwork %>|
 			<% end %>
