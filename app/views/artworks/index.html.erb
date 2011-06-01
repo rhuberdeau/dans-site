@@ -5,7 +5,7 @@
 <% @artworks.each do |artwork| %>
   <li>
     <div class="content_block">
-      <a href="#"><%= image_tag artwork.photo.url %> </a>
+      <a href="#"><%= image_tag artwork.photo.url(:thumb) %> </a>
       <h2><%= artwork.name %> </h2>
       <p>Description goes here</p>
     </div>
