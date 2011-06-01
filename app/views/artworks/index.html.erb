@@ -1,9 +1,14 @@
 <p><%= link_to 'New Artwork', new_artwork_path %></p>
+
+<a href="#" class="switch_thumb">Switch Thumb</a>
+<ul class="display">
 <% @artworks.each do |artwork| %>
-  <div class="photo">
-    <a href="#">
-  	  <span></span>
-  	  <%= image_tag artwork.photo.url %>
-    </a>
-  </div>
-<% end %>
+  <li>
+    <div class="content_block">
+      <a href="#"><%= image_tag artwork.photo.url %> </a>
+      <h2><%= artwork.name %> </h2>
+      <p>Description goes here</p>
+    </div>
+  </li>
+<% end %>  
+</ul>
