@@ -7,23 +7,16 @@
         <%= link_to 'Artwork', artworks_path %>
         <!--Subnav Starts Here-->
         <span>
-        	<% @artworks = Artwork.all %>
-            <% @artworks.each do |artwork|%>
-			  <%= link_to "#{artwork.name}", artwork %>|
+        	<% @galleries = Gallery.all %>
+            <% @galleries.each do |gallery|%>
+			  <%= link_to "#{gallery.name}", gallery %>|
 			<% end %>
         </span>
         <!--Subnav Ends Here-->
     </li>
-    <li>
-        <%= link_to 'Artwork', artworks_path %>
-        <!--Subnav Starts Here-->
-        <span>
-            <% @artworks.each do |artwork|%>
-			  <%= link_to "#{artwork.name}", artwork %>|
-			<% end %>
-        </span>
-        <!--Subnav Ends Here-->
-    </li>
+    <li><%= link_to 'Bio', artworks_path %></li>
+    <li><%= link_to 'Resume', artworks_path %></li>
+    <li><%= link_to 'Contact', artworks_path %></li>
   </ul>
 <% end %>
 </div>

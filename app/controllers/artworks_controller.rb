@@ -3,6 +3,7 @@ class ArtworksController < ApplicationController
   # GET /artworks
   # GET /artworks.xml
   def index
+  	 
     @artworks = Artwork.all
 
     respond_to do |format|
@@ -14,8 +15,9 @@ class ArtworksController < ApplicationController
   # GET /artworks/1
   # GET /artworks/1.xml
   def show
-    @artwork = Artwork.find(params[:id])
-
+  	@artwork = Artwork.find(params[:id])
+    @title = @artwork.name
+    
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @artwork }
@@ -25,7 +27,7 @@ class ArtworksController < ApplicationController
   # GET /artworks/new
   # GET /artworks/new.xml
   def new
-    @artwork = Artwork.new
+  	@artwork = Artwork.new
 
     respond_to do |format|
       format.html # new.html.erb

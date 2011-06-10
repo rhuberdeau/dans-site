@@ -4,4 +4,5 @@ class Artwork < ActiveRecord::Base
   					:storage => :s3,
      				:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
      				:path => ":attachment/:id/:style/:filename"
+  belongs_to :gallery
 end

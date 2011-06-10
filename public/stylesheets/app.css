@@ -76,7 +76,7 @@ ul#topnav li span {
 
 ul#topnav li:hover span { display: block; } /*--Show subnav on hover--*/
 ul#topnav li span a { display: inline; } /*--Since we declared a link style on the parent list link, we will correct it back to its original state--*/
-ul#topnav li span a:hover {text-decoration: underline;}
+ul#topnav li span a:hover {text-decoration: underline; background: #1376c9;}
 
 #horizontalnav {
 	float: left;

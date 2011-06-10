@@ -1,4 +1,6 @@
-<p><%= link_to 'New Artwork', new_artwork_path %></p>
+<% if user_signed_in? %>
+  <p><%= link_to 'New Artwork', new_artwork_path %></p>
+<% end %>
 
 <a href="#" class="switch_thumb">Switch Thumb</a>
 <ul class="display">
@@ -7,6 +9,9 @@
     <div class="content_block">
       <a href="#"><%= image_tag artwork.photo(:thumb) %> </a>
       <h2><%= artwork.name %> </h2>
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_artwork_path(artwork) %>
+      <% end %>
       <p>Description goes here</p>
     </div>
   </li>

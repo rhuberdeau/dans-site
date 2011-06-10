@@ -18,6 +18,10 @@
   <div class="field">
   	<%= f.file_field :photo %>
   </div>
+  <div class="field">
+  	<%= f.label :gallery_id %>
+  	<%= f.collection_select :gallery_id, Gallery.all, :id, :name, {:include_blank => true} %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

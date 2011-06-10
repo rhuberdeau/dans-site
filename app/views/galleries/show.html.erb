@@ -1,0 +1,17 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @gallery.name %>
+</p>
+
+<a href="#" class="switch_thumb">Switch Thumb</a>
+
+<ul class="display">
+  <div id ="artworks">
+    <%= render :partial => @gallery.artworks %>
+  </div>
+</ul>
+
+<%= link_to 'Edit', edit_gallery_path(@gallery) %> |
+<%= link_to 'Back', galleries_path %>
