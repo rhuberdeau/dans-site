@@ -7,7 +7,7 @@
 <% @artworks.each do |artwork| %>
   <li>
     <div class="content_block">
-      <a href="#"><%= image_tag artwork.photo(:thumb) %> </a>
+      <a href="#"><%= image_tag artwork.photo(:small) %> </a>
       <h2><%= artwork.name %> </h2>
       <% if user_signed_in? %>
         <%= link_to 'Edit', edit_artwork_path(artwork) %>
