@@ -37,7 +37,7 @@ class ArtworksController < ApplicationController
 
   # GET /artworks/1/edit
   def edit
-    @artwork = Artwork.find(params[:id])
+    @artwork = Artwork.find_by_permalink(params[:id])
   end
 
   # POST /artworks
@@ -59,7 +59,7 @@ class ArtworksController < ApplicationController
   # PUT /artworks/1
   # PUT /artworks/1.xml
   def update
-    @artwork = Artwork.find(params[:id])
+    @artwork = Artwork.find_by_permalink(params[:id])
 
     respond_to do |format|
       if @artwork.update_attributes(params[:artwork])
@@ -75,7 +75,7 @@ class ArtworksController < ApplicationController
   # DELETE /artworks/1
   # DELETE /artworks/1.xml
   def destroy
-    @artwork = Artwork.find(params[:id])
+    @artwork = Artwork.find_by_permalink(params[:id])
     @artwork.destroy
 
     respond_to do |format|
