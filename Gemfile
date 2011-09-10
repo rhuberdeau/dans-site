@@ -26,7 +26,8 @@ gem 'pg'
   gem "paperclip", "~> 2.3"
   gem 'rake', '0.8.7'
   gem 'aws-s3'
-  gem 'wysihat-engine'
+ 
+  
   
 
 # Bundle gems for the local environment. Make sure to

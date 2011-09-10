@@ -5,7 +5,7 @@
   <%= @artwork.name %>
 </p>
 <p>
-  <%= image_tag @artwork.photo(:thumb) %>
+  <%= image_tag @artwork.photo(:small) %>
 </p>
 
 <%= link_to 'Edit', edit_artwork_path(@artwork) %> |

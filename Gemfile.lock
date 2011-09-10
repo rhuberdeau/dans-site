@@ -77,8 +77,6 @@ GEM
     tzinfo (0.3.25)
     warden (0.10.7)
       rack (>= 1.0.0)
-    wysihat-engine (0.1.13)
-      paperclip (>= 2.3.1)
     xml-simple (1.0.15)
 
 PLATFORMS
@@ -91,4 +89,3 @@ DEPENDENCIES
   pg
   rails (= 3.0.5)
   rake (= 0.8.7)
-  wysihat-engine

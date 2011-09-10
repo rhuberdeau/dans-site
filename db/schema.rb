@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110608011202) do
+ActiveRecord::Schema.define(:version => 20110910224645) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -28,9 +28,11 @@ ActiveRecord::Schema.define(:version => 20110608011202) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.integer  "gallery_id"
+    t.string   "permalink"
   end
 
   add_index "artworks", ["gallery_id"], :name => "index_artworks_on_gallery_id"
+  add_index "artworks", ["permalink"], :name => "index_artworks_on_permalink"
 
   create_table "galleries", :force => true do |t|
     t.string   "name"

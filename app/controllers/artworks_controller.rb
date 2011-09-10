@@ -15,7 +15,7 @@ class ArtworksController < ApplicationController
   # GET /artworks/1
   # GET /artworks/1.xml
   def show
-  	@artwork = Artwork.find(params[:id])
+  	@artwork = Artwork.find_by_permalink(params[:id])
     @title = @artwork.name
     
     respond_to do |format|
