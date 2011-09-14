@@ -6,7 +6,7 @@ class Gallery < ActiveRecord::Base
   validates :name, :presence => true,
                    :uniqueness => { :case_sensitive => false }
   
-  before_create :set_up_permalink
+    before_create :set_up_permalink
                    
   def to_param
   	permalink
