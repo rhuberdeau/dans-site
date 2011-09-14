@@ -52,7 +52,6 @@ class GalleriesController < ApplicationController
         format.xml  { render :xml => @gallery.errors, :status => :unprocessable_entity }
       end
     end
-    expire_fragment('top_nav')
   end
 
   # PUT /galleries/1
@@ -69,7 +68,6 @@ class GalleriesController < ApplicationController
         format.xml  { render :xml => @gallery.errors, :status => :unprocessable_entity }
       end
     end
-    expire_fragment('top_nav')
   end
 
   # DELETE /galleries/1
@@ -82,6 +80,5 @@ class GalleriesController < ApplicationController
       format.html { redirect_to(galleries_url) }
       format.xml  { head :ok }
     end
-    expire_fragment('top_nav')
   end
 end

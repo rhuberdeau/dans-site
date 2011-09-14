@@ -53,7 +53,6 @@ class ArtworksController < ApplicationController
         format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
       end
     end
-    expire_fragment('top_nav')
   end
 
   # PUT /artworks/1
@@ -70,7 +69,6 @@ class ArtworksController < ApplicationController
         format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
       end
     end
-    expire_fragment('top_nav')
   end
 
   # DELETE /artworks/1
@@ -84,5 +82,4 @@ class ArtworksController < ApplicationController
       format.xml  { head :ok }
     end
   end
-  expire_fragment('top_nav')
 end

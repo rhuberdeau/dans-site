@@ -38,5 +38,6 @@ module Dan
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+    config.load_paths << "#{RAILS_ROOT}/app/sweepers"
   end
 end
