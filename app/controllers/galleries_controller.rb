@@ -14,8 +14,8 @@ class GalleriesController < ApplicationController
   # GET /galleries/1
   # GET /galleries/1.xml
   def show
-    @gallery = Gallery.find(params[:id])
-	@title = @gallery.name
+    @gallery = Gallery.find_by_permalink(params[:id])
+	@title = "#{@gallery.name} Gallery"
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @gallery }
@@ -35,7 +35,7 @@ class GalleriesController < ApplicationController
 
   # GET /galleries/1/edit
   def edit
-    @gallery = Gallery.find(params[:id])
+    @gallery = Gallery.find_by_permalink(params[:id])
   end
 
   # POST /galleries
@@ -52,12 +52,13 @@ class GalleriesController < ApplicationController
         format.xml  { render :xml => @gallery.errors, :status => :unprocessable_entity }
       end
     end
+    expire_fragment('top_nav')
   end
 
   # PUT /galleries/1
   # PUT /galleries/1.xml
   def update
-    @gallery = Gallery.find(params[:id])
+    @gallery = Gallery.find_by_permalink(params[:id])
 
     respond_to do |format|
       if @gallery.update_attributes(params[:gallery])
@@ -68,17 +69,19 @@ class GalleriesController < ApplicationController
         format.xml  { render :xml => @gallery.errors, :status => :unprocessable_entity }
       end
     end
+    expire_fragment('top_nav')
   end
 
   # DELETE /galleries/1
   # DELETE /galleries/1.xml
   def destroy
-    @gallery = Gallery.find(params[:id])
+    @gallery = Gallery.find_by_permalink(params[:id])
     @gallery.destroy
 
     respond_to do |format|
       format.html { redirect_to(galleries_url) }
       format.xml  { head :ok }
     end
+    expire_fragment('top_nav')
   end
 end

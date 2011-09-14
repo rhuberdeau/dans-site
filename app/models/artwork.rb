@@ -8,6 +8,9 @@ class Artwork < ActiveRecord::Base
   
   before_create :set_up_permalink
   
+  validates :name, :presence => true,
+  				   :uniqueness => { :case_sensitive => false }
+  
   def to_param
   	permalink
   end

@@ -3,9 +3,8 @@ class ArtworksController < ApplicationController
   # GET /artworks
   # GET /artworks.xml
   def index
-  	 
-    @artworks = Artwork.all
-
+  	@artworks = Artwork.all
+    @title = "Artwork"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @artworks }
@@ -16,7 +15,7 @@ class ArtworksController < ApplicationController
   # GET /artworks/1.xml
   def show
   	@artwork = Artwork.find_by_permalink(params[:id])
-    @title = @artwork.name
+    @title = "#{@artwork.name} - Artwork "
     
     respond_to do |format|
       format.html # show.html.erb
@@ -54,6 +53,7 @@ class ArtworksController < ApplicationController
         format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
       end
     end
+    expire_fragment('top_nav')
   end
 
   # PUT /artworks/1
@@ -70,6 +70,7 @@ class ArtworksController < ApplicationController
         format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
       end
     end
+    expire_fragment('top_nav')
   end
 
   # DELETE /artworks/1
@@ -83,4 +84,5 @@ class ArtworksController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  expire_fragment('top_nav')
 end
