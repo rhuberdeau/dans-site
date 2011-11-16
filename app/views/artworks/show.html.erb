@@ -6,4 +6,5 @@
 <% if user_signed_in? %>
   <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
   <%= link_to 'Back', artworks_path %>
+  <%= link_to 'Delete', artwork_path(@artwork), :confirm => 'Are you sure?', :method => :delete %>
 <% end %>

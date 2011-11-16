@@ -11,6 +11,7 @@
       <h2><%= artwork.name %> </h2>
       <% if user_signed_in? %>
         <%= link_to 'Edit', edit_artwork_path(artwork) %>
+        <%= link_to 'Delete', artwork, :confirm => 'Are you sure?', :method => :delete %>
       <% end %>
       <p>Description goes here</p>
     </div>
