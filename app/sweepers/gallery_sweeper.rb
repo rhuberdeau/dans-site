@@ -10,6 +10,6 @@ class GallerySweeper < ActionController::Caching::Sweeper
   end
   
   def expire_cache(gallery)
-    expire_fragment 'top_nav'
+    expire_fragment 'header'
   end
 end

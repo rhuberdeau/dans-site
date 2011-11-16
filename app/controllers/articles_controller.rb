@@ -4,7 +4,7 @@ class ArticlesController < ApplicationController
   # GET /articles.xml
   def index
     @articles = Article.all
-
+    @title = "Articles"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @articles }
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
   # GET /articles/1.xml
   def show
     @article = Article.find(params[:id])
-    
+    @title = @article.name
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @article }

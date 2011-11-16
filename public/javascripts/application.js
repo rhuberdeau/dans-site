@@ -1,28 +1,29 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
-$(document).ready(function() {
+jQuery.noConflict();
+jQuery(document).ready(function() {
 
-	$("ul#topnav li").hover(function() { //Hover over event on list item
-		$(this).css({ 'background' : '#1376c9'}); //Add background color and image on hovered list item
-		$(this).find("span").show(); //Show the subnav
+	jQuery("ul#topnav li").hover(function() { //Hover over event on list item
+		jQuery(this).css({ 'background' : '#1376c9'}); //Add background color and image on hovered list item
+		jQuery(this).find("span").show(); //Show the subnav
 	} , function() { //on hover out...
-		$(this).css({ 'background' : 'none'}); //Ditch the background
-		$(this).find("span").hide(); //Hide the subnav
+		jQuery(this).css({ 'background' : 'none'}); //Ditch the background
+		jQuery(this).find("span").hide(); //Hide the subnav
 	});
 
 });
 
-$(document).ready(function(){
+jQuery(document).ready(function(){
 
-    $("a.switch_thumb").toggle(function(){
-        $(this).addClass("swap");
-        $("ul.display").fadeOut("fast", function() {
-            $(this).fadeIn("fast").addClass("thumb_view");
+    jQuery("a.switch_thumb").toggle(function(){
+        jQuery(this).addClass("swap");
+        jQuery("ul.display").fadeOut("fast", function() {
+            jQuery(this).fadeIn("fast").addClass("thumb_view");
         });
     }, function () {
-        $(this).removeClass("swap");
-        $("ul.display").fadeOut("fast", function() {
-            $(this).fadeIn("fast").removeClass("thumb_view");
+        jQuery(this).removeClass("swap");
+        jQuery("ul.display").fadeOut("fast", function() {
+            jQuery(this).fadeIn("fast").removeClass("thumb_view");
         });
     }); 
 

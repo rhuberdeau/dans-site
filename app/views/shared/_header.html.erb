@@ -1,6 +1,6 @@
 <div id="header">
 <h1>Daniel Weissbrodt</h1>
-<% cache 'top_nav' do %>
+<% cache 'header' do %>
   <ul id="topnav">
     <li><%= link_to "Home", root_path %>  </li>
     <li>
@@ -14,9 +14,10 @@
         </span>
         <!--Subnav Ends Here-->
     </li>
-    <li><%= link_to 'Bio', artworks_path %></li>
-    <li><%= link_to 'Resume', artworks_path %></li>
-    <li><%= link_to 'Contact', artworks_path %></li>
+    <% @articles = Article.all %>
+    <% @articles.each do |article| %>
+      <li><%= link_to "#{article.name}", article %></li>
+    <% end %>
   </ul>
 <% end %>
 </div>

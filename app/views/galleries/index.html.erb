@@ -11,13 +11,16 @@
 <% @galleries.each do |gallery| %>
   <tr>
     <td><%= gallery.name %></td>
-    <td><%= link_to 'Show', gallery %></td>
-    <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
-    <td><%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% if user_signed_in? %>
+      <td><%= link_to 'Show', gallery %></td>
+      <td><%= link_to 'Edit', edit_gallery_path(gallery) %></td>
+      <td><%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
   </tr>
 <% end %>
 </table>
 
 <br />
-
-<%= link_to 'New Gallery', new_gallery_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Gallery', new_gallery_path %>
+<% end %>

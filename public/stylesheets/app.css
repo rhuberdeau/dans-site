@@ -161,5 +161,8 @@ display:none;
 }
 ul.thumb_view li .content_block a img {
 margin:0 0 10px;
-
+}
+.artwork {
+  width: 120px;
+  margin: auto;
 }

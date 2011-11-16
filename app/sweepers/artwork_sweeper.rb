@@ -10,6 +10,6 @@ class ArtworkSweeper < ActionController::Caching::Sweeper
   end
   
   def expire_cache(artwork)
-    expire_fragment 'top_nav'
+    expire_fragment 'header'
   end
 end

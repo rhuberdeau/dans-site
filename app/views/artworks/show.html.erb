@@ -1,12 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @artwork.name %>
-</p>
-<p>
+<div class ="artwork">
   <%= image_tag @artwork.photo(:small) %>
-</p>
-
-<%= link_to 'Edit', edit_artwork_path(@artwork) %> |
-<%= link_to 'Back', artworks_path %>
+</div>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_artwork_path(@artwork) %> |
+  <%= link_to 'Back', artworks_path %>
+<% end %>
