@@ -27,6 +27,7 @@ gem 'pg'
   gem 'rake', '0.8.7'
   gem 'aws-s3'
   gem "wysihat-engine"
+  gem 'dalli'
   
   
 

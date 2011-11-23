@@ -3,8 +3,8 @@ class ArtworksController < ApplicationController
   # GET /artworks
   # GET /artworks.xml
   def index
-  	@artworks = Artwork.all
-    @title = "Artwork"
+  	@artworks = Artwork.all_cached
+  	@title = "Artwork"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @artworks }

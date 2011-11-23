@@ -15,6 +15,10 @@ class Artwork < ActiveRecord::Base
   	permalink
   end
   
+  def self.all_cached
+    Rails.cache.fetch('Artwork.all') { all }
+  end
+  
   private
   
   def set_up_permalink
