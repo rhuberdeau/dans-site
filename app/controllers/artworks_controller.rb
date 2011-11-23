@@ -2,6 +2,8 @@ class ArtworksController < ApplicationController
   before_filter :authenticate_user!, :except => [:show,:index]
   # GET /artworks
   # GET /artworks.xml
+  
+  
   def index
   	@artworks = Artwork.all_cached
   	@title = "Artwork"
@@ -48,7 +50,7 @@ class ArtworksController < ApplicationController
       if @artwork.save
         format.html { redirect_to(@artwork, :notice => 'Artwork was successfully created.') }
         format.xml  { render :xml => @artwork, :status => :created, :location => @artwork }
-      else
+     else
         format.html { render :action => "new" }
         format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
       end
@@ -76,7 +78,7 @@ class ArtworksController < ApplicationController
   def destroy
     @artwork = Artwork.find_by_permalink(params[:id])
     @artwork.destroy
-
+    
     respond_to do |format|
       format.html { redirect_to(artworks_url) }
       format.xml  { head :ok }

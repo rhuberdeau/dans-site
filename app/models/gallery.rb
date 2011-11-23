@@ -16,6 +16,7 @@ class Gallery < ActiveRecord::Base
   
   def set_up_permalink
   	permalink = self.name.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
+  	permalink = permalink.downcase
     self.permalink = permalink
   end
 end

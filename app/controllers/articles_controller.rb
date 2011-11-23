@@ -2,6 +2,7 @@ class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index,:show]
   # GET /articles
   # GET /articles.xml
+  
   def index
     @articles = Article.all
     @title = "Articles"
@@ -75,8 +76,7 @@ class ArticlesController < ApplicationController
   def destroy
     @article = Article.find(params[:id])
     @article.destroy
-
-    respond_to do |format|
+	respond_to do |format|
       format.html { redirect_to(articles_url) }
       format.xml  { head :ok }
     end

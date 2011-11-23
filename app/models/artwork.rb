@@ -7,7 +7,9 @@ class Artwork < ActiveRecord::Base
   belongs_to :gallery
   
   before_create :set_up_permalink
-  
+  after_save    :expire_contact_all_cache
+  after_destroy :expire_contact_all_cache
+
   validates :name, :presence => true,
   				   :uniqueness => { :case_sensitive => false }
   
@@ -23,6 +25,11 @@ class Artwork < ActiveRecord::Base
   
   def set_up_permalink
   	permalink = self.name.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
+  	permalink = permalink.downcase
     self.permalink = permalink
+  end
+  
+  def expire_contact_all_cache
+    Rails.cache.delete('Artwork.all')
   end
 end
