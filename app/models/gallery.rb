@@ -6,7 +6,9 @@ class Gallery < ActiveRecord::Base
   validates :name, :presence => true,
                    :uniqueness => { :case_sensitive => false }
   
-    before_create :set_up_permalink
+  before_create :set_up_permalink
+  after_save    :expire_gallery_all_cache
+  after_destroy :expire_gallery_all_cache
                    
   def to_param
   	permalink
@@ -18,5 +20,9 @@ class Gallery < ActiveRecord::Base
   	permalink = self.name.gsub(' ', '-').gsub(/[^a-zA-Z0-9\_\-\.]/, '')
   	permalink = permalink.downcase
     self.permalink = permalink
+  end
+  
+  def expire_gallery_all_cache
+    Rails.cache.delete('Gallery.all')
   end
 end

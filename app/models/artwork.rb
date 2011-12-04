@@ -7,8 +7,8 @@ class Artwork < ActiveRecord::Base
   belongs_to :gallery
   
   before_create :set_up_permalink
-  after_save    :expire_contact_all_cache
-  after_destroy :expire_contact_all_cache
+  after_save    :expire_artwork_all_cache
+  after_destroy :expire_artwork_all_cache
 
   validates :name, :presence => true,
   				   :uniqueness => { :case_sensitive => false }

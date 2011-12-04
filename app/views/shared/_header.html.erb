@@ -1,6 +1,5 @@
 <div id="header">
 <h1>Daniel Weissbrodt</h1>
-<% cache (:header) do %>
   <ul id="topnav">
     <li><%= link_to "Home", root_path %>  </li>
     <li>
@@ -19,5 +18,4 @@
       <li><%= link_to "#{article.name}", article %></li>
     <% end %>
   </ul>
-<% end %>
 </div>
