@@ -29,7 +29,7 @@ class Artwork < ActiveRecord::Base
     self.permalink = permalink
   end
   
-  def expire_contact_all_cache
+  def expire_artwork_all_cache
     Rails.cache.delete('Artwork.all')
   end
 end
