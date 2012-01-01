@@ -4,6 +4,7 @@
 	
 ==Admin page
 	1. If you go to /admin, you will see links to create new artworks or new galleries
+	2. You will also see links to each artwork and gallery as well as link to edit or delete each of them
 	
 ==Artworks
 	1. When you create an artwork you can assign a gallery to it
@@ -13,7 +14,8 @@
 ==Galleries
 	1. You can create new galleries from the admin page, /admin
 	2. New galleries will take 30 minutes to show up in the drop down navigation menu ( because it's cached ) but show up immediately on /galleries
-	3. After creating a gallery you can immediately start adding artworks to it
+	3. Similarly, if you delete or edit a gallery, the changes will take 30 minutes to show up in the drop down menu
+	4. After creating a gallery you can immediately start adding artworks to it
 	
 ==Articles
 	1. You can edit any of the articles by viewing them and clicking the edit link. The link will appear as long as you are logged in.
