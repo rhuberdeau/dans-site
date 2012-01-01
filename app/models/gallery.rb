@@ -14,6 +14,10 @@ class Gallery < ActiveRecord::Base
   	permalink
   end
   
+  def self.all_cached
+    Rails.cache.fetch('Gallery.all') { all }
+  end
+  
   private
   
   def set_up_permalink

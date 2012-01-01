@@ -3,7 +3,7 @@ class GalleriesController < ApplicationController
   # GET /galleries
   # GET /galleries.xml
   def index
-    @galleries = Gallery.all
+    @galleries = Gallery.all_cached
 	@title = "Artwork galleries"
     respond_to do |format|
       format.html # index.html.erb

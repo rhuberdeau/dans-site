@@ -6,6 +6,8 @@ Dan::Application.routes.draw do
   resources :artworks
   
   resources :galleries
+  
+  resources :admin
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

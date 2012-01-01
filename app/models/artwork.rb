@@ -12,6 +12,7 @@ class Artwork < ActiveRecord::Base
 
   validates :name, :presence => true,
   				   :uniqueness => { :case_sensitive => false }
+  validates :description, :length => { :maximum => 50 }
   
   def to_param
   	permalink
