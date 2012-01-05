@@ -1,6 +1,7 @@
 
-  <p><%= link_to 'New Artwork', new_artwork_path %></p>
-  <p><%= link_to 'New Gallery', new_gallery_path %></p>
+  <p><%= link_to 'New Artwork', new_artwork_path %> |
+     <%= link_to 'New Gallery', new_gallery_path %>
+  </p>
   
   <h2>Artworks</h2>
   <ul>
@@ -22,6 +23,18 @@
         <%= link_to 'Show', gallery %>
         <%= link_to 'Edit', edit_gallery_path(gallery) %>
         <%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %>
+      </li>
+    <% end %>
+  </ul>
+  
+  <h2>Articles</h2>
+  <ul>
+    <% @articles.each do |article| %>
+      <li>
+        <%= article.name %>
+        <%= link_to 'Show', article %>
+        <%= link_to 'Edit', edit_article_path(article) %>
+        <%= link_to 'Destroy', article, :confirm => 'Are you sure?', :method => :delete %>
       </li>
     <% end %>
   </ul>

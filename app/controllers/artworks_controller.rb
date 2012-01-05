@@ -48,7 +48,7 @@ class ArtworksController < ApplicationController
 
     respond_to do |format|
       if @artwork.save
-        format.html { redirect_to(@artwork, :notice => 'Artwork was successfully created.') }
+        format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Artwork was successfully created.') }
         format.xml  { render :xml => @artwork, :status => :created, :location => @artwork }
      else
         format.html { render :action => "new" }
@@ -64,7 +64,7 @@ class ArtworksController < ApplicationController
 
     respond_to do |format|
       if @artwork.update_attributes(params[:artwork])
-        format.html { redirect_to(@artwork, :notice => 'Artwork was successfully updated.') }
+        format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Artwork was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -80,7 +80,7 @@ class ArtworksController < ApplicationController
     @artwork.destroy
     
     respond_to do |format|
-      format.html { redirect_to(artworks_url) }
+      format.html { redirect_to(:action => :index, :controller => "/admin") }
       format.xml  { head :ok }
     end
   end

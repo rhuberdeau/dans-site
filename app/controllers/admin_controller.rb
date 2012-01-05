@@ -4,5 +4,6 @@ class AdminController < ApplicationController
   def index
   	@galleries = Gallery.all_cached
   	@artworks = Artwork.all_cached
+  	@articles = Article.all
   end
 end

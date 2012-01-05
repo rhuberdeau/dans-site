@@ -45,7 +45,7 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.save
-        format.html { redirect_to(@gallery, :notice => 'Gallery was successfully created.') }
+        format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Gallery was successfully created.') }
         format.xml  { render :xml => @gallery, :status => :created, :location => @gallery }
       else
         format.html { render :action => "new" }
@@ -61,7 +61,7 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.update_attributes(params[:gallery])
-        format.html { redirect_to(@gallery, :notice => 'Gallery was successfully updated.') }
+        format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Gallery was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -77,7 +77,7 @@ class GalleriesController < ApplicationController
     @gallery.destroy
 
     respond_to do |format|
-      format.html { redirect_to(galleries_url) }
+      format.html { redirect_to(:action => :index, :controller => "/admin") }
       format.xml  { head :ok }
     end
   end
