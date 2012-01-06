@@ -2,7 +2,9 @@ class ArtworksController < ApplicationController
   before_filter :authenticate_user!, :except => [:show,:index]
   # GET /artworks
   # GET /artworks.xml
-  
+  caches_page :index
+  caches_page :show
+  cache_sweeper :artwork_sweeper
   
   def index
   	@artworks = Artwork.all_cached
@@ -48,7 +50,7 @@ class ArtworksController < ApplicationController
 
     respond_to do |format|
       if @artwork.save
-        format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Artwork was successfully created.') }
+      	format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Artwork was successfully created.') }
         format.xml  { render :xml => @artwork, :status => :created, :location => @artwork }
      else
         format.html { render :action => "new" }
@@ -64,7 +66,7 @@ class ArtworksController < ApplicationController
 
     respond_to do |format|
       if @artwork.update_attributes(params[:artwork])
-        format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Artwork was successfully updated.') }
+      	format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Artwork was successfully updated.') }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
@@ -78,6 +80,7 @@ class ArtworksController < ApplicationController
   def destroy
     @artwork = Artwork.find_by_permalink(params[:id])
     @artwork.destroy
+    expire_page :action => :index
     
     respond_to do |format|
       format.html { redirect_to(:action => :index, :controller => "/admin") }

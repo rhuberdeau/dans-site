@@ -2,6 +2,10 @@ class GalleriesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index,:show]
   # GET /galleries
   # GET /galleries.xml
+  caches_page :index
+  caches_page :show
+  cache_sweeper :gallery_sweeper
+  
   def index
     @galleries = Gallery.all_cached
 	@title = "Artwork galleries"
