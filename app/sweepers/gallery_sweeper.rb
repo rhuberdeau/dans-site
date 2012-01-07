@@ -10,8 +10,9 @@ class GallerySweeper < ActionController::Caching::Sweeper
   end
   
   def expire_cache_for(gallery)
-  	expire_page(:controller => 'galleries', :action => 'index')
-  	expire_page(:controller => 'galleries', :action => 'show', :id => gallery)
+  	expire_page(:controller => '/galleries', :action => 'index')
+  	expire_page(:controller => '/galleries', :action => 'show', :id => gallery)
     expire_fragment('header')
+    expire_page '/index.html'
   end
 end

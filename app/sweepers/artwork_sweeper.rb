@@ -11,7 +11,8 @@ class ArtworkSweeper < ActionController::Caching::Sweeper
   
   def expire_cache_for(artwork)
   	expire_page :action => :index
-  	expire_page(:controller => 'artworks', :action => 'show', :id => artwork)
+  	expire_page '/index.html'
+  	expire_page(:controller => '/artworks', :action => 'show', :id => artwork)
     expire_fragment('header')
   end
 end

@@ -10,7 +10,8 @@ class ArticleSweeper < ActionController::Caching::Sweeper
   end
   
   def expire_cache_for(article)
-  	expire_page(:controller => 'articles', :action => 'show', :id => article)
+  	expire_page '/index.html'
+  	expire_page(:controller => '/articles', :action => 'show', :id => article)
     expire_fragment('header')
   end
 end
