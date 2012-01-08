@@ -1,7 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <h1><%= @article.name %></h1>
-
-<p>
-  <%= raw @article.body %>
-</p>
+<% if @article.name == "Bio"%>
+  <%= render 'bio_pic'%>
+<% end %>
+<div id= "#{@article.name}">
+  <p>
+    <%= raw @article.body %>
+  </p>
+</div>
