@@ -4,12 +4,16 @@
   float: left;
   width: 402px;
   height: 604px;
-  margin-right: 5px;
 }
 
-#bio {
+#Bio {
+  float: right;
   padding-left: 5px;
   margin-left: 5px;
+}
+
+#article_content {
+  float: left;
 }
 
 h1 {
