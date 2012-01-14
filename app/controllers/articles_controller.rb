@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :except => [:show]
   # GET /articles
   # GET /articles.xml
-  caches_page :show
+  caches_action :show
   cache_sweeper :article_sweeper
   
   def index

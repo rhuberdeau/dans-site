@@ -2,8 +2,8 @@ class ArtworksController < ApplicationController
   before_filter :authenticate_user!, :except => [:show,:index]
   # GET /artworks
   # GET /artworks.xml
-  caches_page :index
-  caches_page :show
+  caches_action :index
+  caches_action :show
   cache_sweeper :artwork_sweeper
   
   def index
