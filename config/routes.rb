@@ -8,6 +8,8 @@ Dan::Application.routes.draw do
   resources :galleries
   
   resources :admin
+  
+  match "/sitemap" => "sitemap#index", :as => :sitemap, :defaults => {:format => :xml}
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
