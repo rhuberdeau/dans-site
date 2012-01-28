@@ -28,7 +28,7 @@ gem 'pg'
   gem 'aws-s3'
   gem "wysihat-engine"
   gem 'dalli'
-  #gem "aws-sdk"
+  gem "aws-sdk"
   
   
 
