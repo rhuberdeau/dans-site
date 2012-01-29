@@ -5,5 +5,8 @@ class AdminController < ApplicationController
   	@galleries = Gallery.all_cached
   	@artworks = Artwork.all_cached
   	@articles = Article.all
+  	
+  	@artwork = Artwork.new
+  	@gallery = Gallery.new
   end
 end

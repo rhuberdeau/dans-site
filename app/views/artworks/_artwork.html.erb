@@ -1,7 +1,6 @@
 <li>
-  <div class="content_block">
-    <a href="#"><%= image_tag artwork.photo(:small) %> </a>
-    <h2><%= artwork.name %> </h2>
-    <p><%= artwork.description %></p>
-  </div>
+  <%= artwork.name %>
+  <%= link_to 'Show', artwork %>
+  <%= link_to 'Edit', edit_artwork_path(artwork) %>
+  <%= link_to 'Destroy', artwork, :confirm => 'Are you sure?', :method => :delete %>
 </li>

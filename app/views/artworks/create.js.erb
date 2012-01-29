@@ -1,0 +1,6 @@
+jQuery("#admin_content").before('<div id="flash_notice"><%= escape_javascript(flash.delete(:notice)) %></div>');
+jQuery("#galleries").append("<%= escape_javascript(render(:partial => @artwork)) %>");
+jQuery("#new_artwork")[0].reset();
+jQuery("#new_gallery")[0].reset();
+jQuery("#artwork_form").hide("slow");
+jQuery("#gallery_form").hide("slow");

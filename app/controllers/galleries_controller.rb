@@ -19,6 +19,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/1.xml
   def show
     @gallery = Gallery.find_by_permalink(params[:id])
+    @artworks = @gallery.artworks
 	@title = "#{@gallery.name} Gallery"
     respond_to do |format|
       format.html # show.html.erb
@@ -49,9 +50,12 @@ class GalleriesController < ApplicationController
 
     respond_to do |format|
       if @gallery.save
+      	flash[:notice] = "New gallery has been created"
         format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Gallery was successfully created.') }
         format.xml  { render :xml => @gallery, :status => :created, :location => @gallery }
+        format.js
       else
+      	flash[:notice] = "Please try again"
         format.html { render :action => "new" }
         format.xml  { render :xml => @gallery.errors, :status => :unprocessable_entity }
       end

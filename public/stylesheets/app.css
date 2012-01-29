@@ -1,4 +1,25 @@
-/* Biot Pic*/
+/* Admin Page */
+#admin_page{
+  background-color: #222222;
+}
+#admin_fields{
+  width: 100%;
+  float: left;
+  position: relative;
+}
+#artwork_form {
+  display: none;
+  float:left;
+}
+#gallery_form {
+  display: none;
+  float: right;
+}
+#flash_notice {
+  background-color: #CFC;
+  border: solid 1px #6C6;
+}
+/* Bio Pic*/
 #bio_pic {
   background: url(/images/dan.png);
   float: left;

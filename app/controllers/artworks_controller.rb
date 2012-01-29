@@ -50,9 +50,12 @@ class ArtworksController < ApplicationController
 
     respond_to do |format|
       if @artwork.save
+      	flash[:notice] = "New artwork has been created"
       	format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Artwork was successfully created.') }
         format.xml  { render :xml => @artwork, :status => :created, :location => @artwork }
+        format.js
      else
+     	flash[:notice] = "Please try again"
         format.html { render :action => "new" }
         format.xml  { render :xml => @artwork.errors, :status => :unprocessable_entity }
       end

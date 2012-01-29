@@ -1,32 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-  <p><%= link_to 'New Artwork', new_artwork_path %> |
-     <%= link_to 'New Gallery', new_gallery_path %>
+  <p><button id="new_artwork_button">New Artwork</button>
+  	 <button id="cancel_artwork_button" style="display: none;">Cancel Artwork</button> 
+     <button id="new_gallery_button">New Gallery</button>
+     <button id="cancel_gallery_button" style="display: none;">Cancel Gallery</button> 
   </p>
   
+  <div id ="admin_fields">
+	<div id="artwork_form">
+	  <%= render :partial => 'artworks/form'%>
+	</div>
+	<div id="gallery_form">
+	  <%= render :partial => 'galleries/form'%>
+	</div>
+  </div>
+  
+  <div id="admin_content">	
   <h2>Artworks</h2>
-  <ul>
-    <% @artworks.each do |artwork| %>
-      <li>
-        <%= artwork.name %>
-        <%= link_to 'Show', artwork %>
-        <%= link_to 'Edit', edit_artwork_path(artwork) %>
-        <%= link_to 'Destroy', artwork, :confirm => 'Are you sure?', :method => :delete %>
-      </li>
-    <% end %>
-  </ul>
+  <div id="artworks">
+	  <ul>
+	    <%= render @artworks %>
+	  </ul>
+  </div>
   
   <h2>Galleries</h2>
-  <ul>
-    <% @galleries.each do |gallery| %>
-      <li>
-        <%= gallery.name %>
-        <%= link_to 'Show', gallery %>
-        <%= link_to 'Edit', edit_gallery_path(gallery) %>
-        <%= link_to 'Destroy', gallery, :confirm => 'Are you sure?', :method => :delete %>
-      </li>
-    <% end %>
-  </ul>
+  <div id="galleries">
+	  <ul>
+	    <%= render @galleries %>
+	  </ul>
+  </div>
   
   <h2>Articles</h2>
   <ul>
@@ -39,3 +41,4 @@
       </li>
     <% end %>
   </ul>
+  </div>

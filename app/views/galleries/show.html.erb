@@ -1,7 +1,14 @@
 <a href="#" class="switch_thumb">Switch Thumb</a>
-
 <ul class="display">
-  <div id ="artworks">
-    <%= render :partial => @gallery.artworks %>
-  </div>
+<% @artworks.each do |artwork| %>
+  <li>
+    <div class="content_block">
+      <%= link_to image_tag(artwork.photo(:small)), artwork %>
+      <h2><%= artwork.name %> </h2>
+      <% unless artwork.description.nil? %>
+        <p><%= artwork.description %></p>
+      <% end %>
+    </div>
+  </li>
+<% end %>  
 </ul>

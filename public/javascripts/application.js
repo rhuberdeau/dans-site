@@ -1,6 +1,19 @@
 // Place your application-specific JavaScript functions and classes here
 // This file is automatically included by javascript_include_tag :defaults
 jQuery.noConflict();
+
+jQuery.ajaxSetup({ 
+  'beforeSend': function(xhr) {xhr.setRequestHeader("Accept", "text/javascript")}
+})
+
+jQuery.fn.submitWithAjax = function() {
+  this.submit(function() {
+    $.post(this.action, $(this).serialize(), null, "script");
+    return false;
+  })
+  return this;
+};
+
 jQuery(document).ready(function() {
 
 	jQuery("ul#topnav li").hover(function() { //Hover over event on list item
@@ -28,3 +41,49 @@ jQuery(document).ready(function(){
     }); 
 
 });
+
+jQuery(document).ready(function() {
+  jQuery("#new_artwork_button").click(function () {
+      jQuery("#artwork_form").show("slow");
+      jQuery("#new_artwork_button").hide("slow");
+      jQuery("#cancel_artwork_button").show("slow");
+    });
+});
+
+jQuery(document).ready(function() {
+  jQuery("#new_gallery_button").click(function () {
+      jQuery("#gallery_form").show("slow");
+      jQuery("#new_gallery_button").hide("slow");
+      jQuery("#cancel_gallery_button").show("slow");
+    });
+});
+
+jQuery(document).ready(function() {
+  jQuery("#cancel_artwork_button").click(function () {
+      jQuery("#artwork_form").hide("slow");
+      jQuery("#cancel_artwork_button").hide("slow");
+      jQuery("#new_artwork_button").show("slow");
+    });
+});
+
+jQuery(document).ready(function() {
+  jQuery("#cancel_gallery_button").click(function () {
+      jQuery("#gallery_form").hide("slow");
+      jQuery("#cancel_gallery_button").hide("slow");
+      jQuery("#new_gallery_button").show("slow");
+    });
+});
+
+jQuery(document).ready(function() {
+  jQuery("#new_artwork_button").click(function () {
+      jQuery("#artwork_form").show("slow");
+    });
+});
+
+jQuery(document).ready(function() {
+  jQuery("#new_artwork").submitWithAjax();	
+})
+
+jQuery(document).ready(function() {
+  jQuery("#new_gallery").submitWithAjax();	
+})
