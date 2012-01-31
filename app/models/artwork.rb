@@ -1,7 +1,7 @@
 class Artwork < ActiveRecord::Base
   has_attached_file :photo,
   					:whiny => false, 
-  					:styles => { :small => "215x120#" }, 
+  					:styles => { :small => "215x120>", :large => "1000x1000>" }, 
   					:storage => :s3,
      				:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
      				:path => ":attachment/:id/:style/:filename"
@@ -13,7 +13,7 @@ class Artwork < ActiveRecord::Base
 
   validates :name, :presence => true,
   				   :uniqueness => { :case_sensitive => false }
-  validates :description, :length => { :maximum => 50 }
+  validates :description, :length => { :maximum => 100 }
   
   def to_param
   	permalink

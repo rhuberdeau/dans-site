@@ -19,6 +19,17 @@
   background-color: #CFC;
   border: solid 1px #6C6;
 }
+ul#admin_form_buttons {
+  list-style: none;
+}
+/*ul#admin_form_buttons li {
+  background-color: #1376c9;
+}
+
+.help_text {
+  background-color: #1376c9;
+}
+*/
 /* Bio Pic*/
 #bio_pic {
   background: url(/images/dan.png);
