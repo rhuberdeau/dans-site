@@ -1,7 +1,7 @@
 class Artwork < ActiveRecord::Base
   has_attached_file :photo,
   					:whiny => false, 
-  					:styles => { :small => "215x120>", :large => "1000x1000>" }, 
+  					:styles => { :small => "215x120>", :large => "500x500>" }, 
   					:storage => :s3,
      				:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
      				:path => ":attachment/:id/:style/:filename"
