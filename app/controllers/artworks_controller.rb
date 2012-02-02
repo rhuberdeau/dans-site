@@ -8,7 +8,7 @@ class ArtworksController < ApplicationController
   
   def index
   	@artworks = Artwork.all_cached
-  	@galleries = Gallery.all_cached
+  	@galleries = Gallery.all
   	@title = "Artwork"
     respond_to do |format|
       format.html # index.html.erb
