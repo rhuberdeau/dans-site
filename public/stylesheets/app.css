@@ -22,6 +22,10 @@
 ul#admin_form_buttons {
   list-style: none;
 }
+#gllery {
+  width: 100%;
+  float: left;
+}
 /*ul#admin_form_buttons li {
   background-color: #1376c9;
 }
@@ -187,7 +191,6 @@ font-size:1.7em;
 font-weight:normal;
 margin:0;
 padding:5px;
-
 }
 ul.display li .content_block p {
 font-size:1.2em;
