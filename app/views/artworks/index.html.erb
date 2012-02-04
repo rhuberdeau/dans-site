@@ -1,6 +1,6 @@
 <a href="#" class="switch_thumb">Switch Thumb</a>
 <% @galleries.each do |gallery| %>
-  <div id="gallery">
+  <div id="#<%= gallery.name %>" class="gallery">
   	<% if gallery.artworks.length > 0 %>
 	  <h2><%= gallery.name %></h2>
 		<ul class="display">

@@ -86,6 +86,11 @@ h1 {
   left: 90px
   background: url(image.gif) no-repeat;
 }
+.gallery {
+  float: left;
+  width: 100%;
+}
+
 
 /* Top Nav */
 ul#topnav {
