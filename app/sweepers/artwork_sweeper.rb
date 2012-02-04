@@ -13,7 +13,7 @@ class ArtworkSweeper < ActionController::Caching::Sweeper
   	expire_action(:controller => 'artworks', :action => 'index')
   	expire_page '/index.html'
   	expire_action(:controller => 'artworks', :action => 'show', :id => artwork)
-    expire_fragment :header
+    expire_fragment ('header')
     unless artwork.gallery.nil?
     	gallery = artwork.gallery
     	expire_action(:controller => 'galleries', :action => 'show', :id => gallery)
