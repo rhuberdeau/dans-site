@@ -1,5 +1,9 @@
 <div class ="artwork">
-  <%= image_tag @artwork.photo(:large) %>
-  <h2><%= @artwork.name %></h2>
-  <%= @artwork.description %>
+  <div id="artwork_image">
+    <%= image_tag @artwork.photo(:large) %>
+  </div>
+  <div id="artwork_text">
+    <h2><%= @artwork.name %></h2>
+    <%= @artwork.description %>
+  </div>
 </div>

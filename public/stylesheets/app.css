@@ -90,8 +90,12 @@ h1 {
   float: left;
   width: 100%;
 }
-
-
+#artwork_text {
+  float: right;
+}
+#artwork_image {
+  float: left;
+}
 /* Top Nav */
 ul#topnav {
 	margin: 0; padding: 0;
@@ -223,4 +227,5 @@ margin:0 0 10px;
 }
 .artwork {
   margin: auto;
+  float: left;
 }
