@@ -92,6 +92,7 @@ h1 {
 }
 #artwork_text {
   float: right;
+  padding-left: 10px;
 }
 #artwork_image {
   float: left;
