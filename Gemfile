@@ -22,7 +22,7 @@ gem 'pg'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'devise'
-  gem "paperclip"
+  gem "paperclip", '2.7'
   gem 'rake', '0.8.7'
   gem "wysihat-engine"
   gem 'dalli'
