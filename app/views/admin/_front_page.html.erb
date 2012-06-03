@@ -1,0 +1,16 @@
+<h2>Editing Gallery <%= @gallery.name %></h2>
+<%= form_for(@gallery) do |f| %>
+  <%= f.fields_for :artworks do |artwork_fields| %>
+    <fieldset class = "image_gallery">
+    <%= image_tag(artwork_fields.object.photo(:small)) %>    
+    <div class="field">
+      <%= artwork_fields.label :front_page %><br />
+      <%= artwork_fields.check_box :front_page %>
+    </div>
+    </fieldset>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -3,8 +3,10 @@ class Artwork < ActiveRecord::Base
   					:whiny => false, 
   					:styles => { :small => "215x120>", :large => "500x500#" }, 
   					:storage => :s3,
-     				:s3_credentials => "#{RAILS_ROOT}/config/s3.yml",
+     				:s3_credentials => "#{RAILS_ROOT}/config/aws.yml",
      				:path => ":attachment/:id/:style/:filename"
+     				
+     				
   belongs_to :gallery
   
   before_create :set_up_permalink
@@ -14,6 +16,8 @@ class Artwork < ActiveRecord::Base
   validates :name, :presence => true,
   				   :uniqueness => { :case_sensitive => false }
   validates :description, :length => { :maximum => 100 }
+  
+  scope :front_page, where(:front_page => true) 
   
   def to_param
   	permalink

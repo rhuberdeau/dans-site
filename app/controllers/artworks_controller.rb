@@ -7,8 +7,7 @@ class ArtworksController < ApplicationController
   cache_sweeper :artwork_sweeper
   
   def index
-  	@galleries = Gallery.all
-  	@artworks = Artwork.all_cached
+  	@artworks = Artwork.front_page
   	@title = "Artwork"
     respond_to do |format|
       format.html # index.html.erb

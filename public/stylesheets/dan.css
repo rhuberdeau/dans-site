@@ -1,0 +1,453 @@
+h1 {
+  font: normal 320%/100% Georgia, "Times New Roman", Times, serif;
+  margin: 20px 0 5px 10px;
+  letter-spacing: -2px;
+}
+
+#container {
+  width: 975px;
+  margin: auto;
+}
+
+#header {
+  padding-bottom: 90px;
+}
+
+fieldset .image_gallery {
+  width: 250px;
+}
+
+#bio_pic {
+  background: url("/images/dan.png");
+  float: left;
+    height: 604px;
+    width: 402px;
+}
+
+/* Gallery styling */
+.photo {
+  margin: 30px;
+  position: relative;
+  width: 180px;
+  height: 130px;
+  float: left;
+}
+
+.photo span {
+  width: 20px;
+  height: 18px;
+  display: block;
+  position: absolute;
+  top: -12px;
+  left: 90px
+  background: url(image.gif) no-repeat;
+}
+
+ul#admin_form_buttons{
+  list-style: none;
+}
+.admin {
+  background: #171717;
+  padding: 10px;
+}
+#artwork_form{
+  display: none;
+  background: #030303;
+}
+#gallery_form{
+  display: none;
+  background: #030303;
+}
+/* Top Nav */
+ul#topnav {
+	margin: 0; padding: 0;
+	float: left;
+	width: 970px;
+	list-style: none;
+	position: relative; /*--Set relative positioning on the unordered list itself - not on the list item--*/
+	font-size: 1.2em;
+	background: url(/images/topnav_stretch.gif) repeat-x;
+}
+ul#topnav li {
+	float: left;
+	margin: 0; padding: 0;
+	border-right: 1px solid #555; /*--Divider for each parent level links--*/
+}
+ul#topnav li a {
+	padding: 10px 15px;
+	display: block;
+	color: #f0f0f0;
+	text-decoration: none;
+}
+ul#topnav li:hover { background: #1376c9  }
+
+ul#topnav li span {
+	float: left;
+	padding: 15px 0;
+	position: absolute;
+	left: 0; top:35px;
+	display: none; /*--Hide by default--*/
+	width: 970px;
+	background: #1376c9;
+	color: #fff;
+	/*--Bottom right rounded corner--*/
+	-moz-border-radius-bottomright: 5px;
+	-khtml-border-radius-bottomright: 5px;
+	-webkit-border-bottom-right-radius: 5px;
+	/*--Bottom left rounded corner--*/
+	-moz-border-radius-bottomleft: 5px;
+	-khtml-border-radius-bottomleft: 5px;
+	-webkit-border-bottom-left-radius: 5px;
+}
+
+ul#topnav li:hover span { display: block; } /*--Show subnav on hover--*/
+ul#topnav li span a { display: inline; } /*--Since we declared a link style on the parent list link, we will correct it back to its original state--*/
+ul#topnav li span a:hover {text-decoration: underline; background: #1376c9;}
+
+#horizontalnav {
+	float: left;
+	padding-bottom: 50px;
+	width: 970px;
+	position: relative;
+}
+
+/*Image swap */
+a.switch_thumb {
+background:url("/images/switch.gif") no-repeat scroll 0 0 transparent;
+display:block;
+height:26px;
+line-height:26px;
+margin:10px 0;
+outline:medium none;
+padding:0;
+text-indent:-9999px;
+width:122px;
+}
+a.switch_thumb:hover {
+opacity:0.75;
+}
+a.swap {
+background-position:left bottom;
+}
+
+ul.display {
+background:none repeat scroll 0 0 #222222;
+border-right:1px solid #333333;
+border-top:1px solid #333333;
+float:left;
+list-style:none outside none;
+margin:0;
+padding:0;
+width:756px;
+}
+ul.display li {
+border-color:#111111 #111111 #333333 #333333;
+border-style:solid;
+border-width:1px;
+float:left;
+margin:0;
+padding:10px 0;
+width:754px;
+}
+ul.display li a {
+color:#E7FF61;
+text-decoration:none;
+}
+ul.display li .content_block {
+padding:0 10px;
+
+}
+ul.display li .content_block h2 {
+font-size:1.7em;
+font-weight:normal;
+margin:0;
+padding:5px;
+
+}
+ul.display li .content_block p {
+font-size:1.2em;
+margin:0;
+padding:5px 5px 5px 245px;
+}
+ul.display li .content_block a img {
+background:none repeat scroll 0 0 #FFFFFF;
+border:2px solid #CCCCCC;
+float:left;
+margin:0 15px 0 0;
+padding:5px;
+}
+ul.thumb_view li {
+width:250px;
+}
+ul.thumb_view li h2 {
+display:inline;
+}
+ul.thumb_view li p {
+display:none;
+}
+ul.thumb_view li .content_block a img {
+margin:0 0 10px;
+}
+
+body { background-color: #000; color: #fff; }
+
+body, p, ol, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #fff; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+div.field, div.actions {
+  margin-bottom: 10px;
+  color: #fff;
+}
+
+#notice {
+  color: green;
+}
+
+.field_with_errors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+
+#admin_page {
+    background-color: #222222;
+}
+#admin_fields {
+    float: left;
+    position: relative;
+    width: 100%;
+}
+#flash_notice {
+    background-color: #CCFFCC;
+    border: 1px solid #66CC66;
+}
+ul#admin_form_buttons {
+    list-style: none outside none;
+}
+#gllery {
+    float: left;
+    width: 100%;
+}
+#bio_pic {
+    background: url("/images/dan.png") repeat scroll 0 0 transparent;
+    float: left;
+    height: 604px;
+    width: 402px;
+}
+#Bio {
+    float: right;
+    margin-left: 5px;
+    padding-left: 5px;
+}
+#article_content {
+    float: left;
+    position: relative;
+}
+h1 {
+    font: 320%/100% Georgia,"Times New Roman",Times,serif;
+    letter-spacing: -2px;
+    margin: 20px 0 5px 10px;
+}
+#container {
+    margin: auto;
+    width: 975px;
+}
+#header {
+    padding-bottom: 90px;
+}
+.photo {
+    float: left;
+    height: 130px;
+    margin: 30px;
+    position: relative;
+    width: 180px;
+}
+.photo span {
+    display: block;
+    height: 18px;
+    position: absolute;
+    top: -12px;
+    width: 20px;
+}
+.gallery {
+    float: left;
+    width: 100%;
+}
+#artwork_text {
+    float: right;
+    padding-left: 10px;
+}
+#artwork_image {
+    float: left;
+}
+ul#topnav {
+    background: url("/images/topnav_stretch.gif") repeat-x scroll 0 0 transparent;
+    float: left;
+    font-size: 1.2em;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    width: 970px;
+}
+ul#topnav li {
+    border-right: 1px solid #555555;
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+ul#topnav li a {
+    color: #F0F0F0;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+}
+ul#topnav li:hover {
+    background: none repeat scroll 0 0 #1376C9;
+}
+ul#topnav li span {
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 5px;
+    background: none repeat scroll 0 0 #1376C9;
+    color: #FFFFFF;
+    display: none;
+    float: left;
+    left: 0;
+    padding: 15px 0;
+    position: absolute;
+    top: 35px;
+    width: 970px;
+}
+ul#topnav li:hover span {
+    display: block;
+}
+ul#topnav li span a {
+    display: inline;
+}
+ul#topnav li span a:hover {
+    background: none repeat scroll 0 0 #1376C9;
+    text-decoration: underline;
+}
+#horizontalnav {
+    float: left;
+    padding-bottom: 50px;
+    position: relative;
+    width: 970px;
+}
+a.switch_thumb {
+    background: url("/images/switch.gif") no-repeat scroll 0 0 transparent;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    margin: 10px 0;
+    outline: medium none;
+    padding: 0;
+    text-indent: -9999px;
+    width: 122px;
+}
+a.switch_thumb:hover {
+    opacity: 0.75;
+}
+a.swap {
+    background-position: left bottom;
+}
+ul.display {
+    background: none repeat scroll 0 0 #222222;
+    border-right: 1px solid #333333;
+    border-top: 1px solid #333333;
+    float: left;
+    list-style: none outside none;
+    margin: 0;
+    padding: 0;
+    width: 756px;
+}
+ul.display li {
+    border-color: #111111 #111111 #333333 #333333;
+    border-style: solid;
+    border-width: 1px;
+    float: left;
+    margin: 0;
+    padding: 10px 0;
+    width: 754px;
+}
+ul.display li a {
+    color: #E7FF61;
+    text-decoration: none;
+}
+ul.display li .content_block {
+    padding: 0 10px;
+}
+ul.display li .content_block h2 {
+    font-size: 1.7em;
+    font-weight: normal;
+    margin: 0;
+    padding: 5px;
+}
+ul.display li .content_block p {
+    font-size: 1.2em;
+    margin: 0;
+    padding: 5px;
+}
+ul.display li .content_block a img {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 2px solid #CCCCCC;
+    float: left;
+    margin: 0 15px 0 0;
+    padding: 5px;
+}
+ul.thumb_view li {
+    width: 250px;
+}
+ul.thumb_view li h2 {
+    display: inline;
+}
+ul.thumb_view li p {
+    display: none;
+}
+ul.thumb_view li .content_block a img {
+    margin: 0 0 10px;
+}
+.artwork {
+    float: left;
+    margin: auto;
+}
+

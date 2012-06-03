@@ -55,6 +55,7 @@ jQuery(document).ready(function() {
       jQuery("#gallery_form").show("slow");
       jQuery("#new_gallery_button").hide("slow");
       jQuery("#cancel_gallery_button").show("slow");
+      jQuery("#artwork_form").hide("slow");
     });
 });
 
@@ -77,6 +78,7 @@ jQuery(document).ready(function() {
 jQuery(document).ready(function() {
   jQuery("#new_artwork_button").click(function () {
       jQuery("#artwork_form").show("slow");
+      jQuery("#gallery_form").hide("slow");
     });
 });
 
@@ -87,3 +89,4 @@ jQuery(document).ready(function() {
 jQuery(document).ready(function() {
   jQuery("#new_gallery").submitWithAjax();	
 })
+

@@ -1,7 +1,7 @@
 class Gallery < ActiveRecord::Base
-  attr_accessible :name
-  
+    
   has_many :artworks
+  accepts_nested_attributes_for :artworks
   
   validates :name, :presence => true,
                    :uniqueness => { :case_sensitive => false }

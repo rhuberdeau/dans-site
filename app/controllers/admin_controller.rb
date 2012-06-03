@@ -9,4 +9,12 @@ class AdminController < ApplicationController
   	@artwork = Artwork.new
   	@gallery = Gallery.new
   end
+  
+  def frontpage
+  	@gallery = Gallery.find(params[:id])
+  	@artworks = @gallery.artworks
+  	respond_to do | format |  
+      format.js {render :layout => false}  
+    end
+  end
 end

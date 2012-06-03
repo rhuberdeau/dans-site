@@ -5,12 +5,18 @@ Dan::Application.routes.draw do
 
   resources :artworks
   
-  resources :galleries
+  resources :galleries 
   
-  resources :admin
+  resources :admin do
+  	member do
+  	  get 'frontpage'
+  	end
+  end
   
+   
   match "/sitemap" => "sitemap#index", :as => :sitemap, :defaults => {:format => :xml}
-
+  #match "/admin/frontpage/:id" => "admin#frontpage"
+    
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

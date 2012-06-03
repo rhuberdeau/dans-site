@@ -1,3 +1,4 @@
+<div class="admin">
 <p id="notice"><%= notice %></p>
   
   <ul id="admin_form_buttons">
@@ -24,12 +25,16 @@
 		  </ul>
 	  </div>
 	  
-	  <h2>Galleries</h2>
-	  <div id="galleries">
-		  <ul>
-		    <%= render @galleries %>
-		  </ul>
+	  <h2>Edit a Gallery</h2>
+	  <div class= "get_frontpage">
+	    <% @galleries.each do |g| %>
+	      <%= link_to "#{g.name}", frontpage_admin_path(:id => g.id), :remote => true %>
+	    <% end %>
 	  </div>
+	  
+	  <div id="image-gallery"></div>
+	  
+	  <div id='edit_gallery'></div>
 	  
 	  <h2>Articles</h2>
 	  <ul>
@@ -43,3 +48,4 @@
 	    <% end %>
 	  </ul>
   </div>
+</div>

@@ -5,14 +5,15 @@
         <%= link_to 'Artwork', artworks_path %>
         <!--Subnav Starts Here-->
         <span>
-        	<% @galleries = Gallery.all %>
+        	<% @galleries = Gallery.limit(2) %>
             <% @galleries.each do |gallery|%>
 			  <%= link_to "#{gallery.name}", gallery %>|
 			<% end %>
+			<%= link_to "More Galleries", galleries_path %>
         </span>
         <!--Subnav Ends Here-->
     </li>
-    <% @articles = Article.all %>
+    <% @articles = Article.order("name ASC") %>
     <% @articles.each do |article| %>
       <li><%= link_to "#{article.name}", article %></li>
     <% end %>

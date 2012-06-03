@@ -21,14 +21,12 @@ gem 'pg'
 # gem 'bj'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
-# gem 'aws-s3', :require => 'aws/s3'
   gem 'devise'
   gem "paperclip"
   gem 'rake', '0.8.7'
-  #gem 'aws-s3'
   gem "wysihat-engine"
   gem 'dalli'
-  gem "aws-sdk"
+  gem 'aws-sdk', '~> 1.3.4'
   
   
   

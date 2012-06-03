@@ -1,21 +1,18 @@
 <a href="#" class="switch_thumb">Switch Thumb</a>
-<% @galleries.each do |gallery| %>
-  <div id="#<%= gallery.name %>" class="gallery">
-  	<% if gallery.artworks.length > 0 %>
-	  <h2><%= gallery.name %></h2>
-		<ul class="display">
-		<% gallery.artworks.each do |artwork| %>
-		  <li>
-		    <div class="content_block">
-		      <%= link_to image_tag(artwork.photo(:small)), artwork %>
-		      <h2><%= artwork.name %> </h2>
-		      <% unless artwork.description.nil? %>
-		        <p><%= artwork.description %></p>
-		      <% end %>
-		    </div>
-		  </li>
-		<% end %>  
-	  </ul>
-	</div>
-  <% end %>
-<% end %>
+<ul class="display">
+<% @artworks.each do |artwork| %>
+  <li>
+    <div class="content_block">
+      <%= link_to image_tag(artwork.photo(:small)), artwork %>
+      <h2><%= artwork.name %> </h2>
+      <% if user_signed_in? %>
+        <%= link_to 'Edit', edit_artwork_path(artwork) %>
+        <%= link_to 'Delete', artwork, :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>
+      <% unless artwork.description.nil? %>
+        <p><%= artwork.description %></p>
+      <% end %>
+    </div>
+  </li>
+<% end %>  
+</ul>
