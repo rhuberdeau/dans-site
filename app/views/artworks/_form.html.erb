@@ -14,10 +14,7 @@
   	<%= f.label :gallery_id %>
   	<%= f.collection_select :gallery_id, Gallery.all, :id, :name, {:include_blank => true} %>
   </div>
-  <div class ="field">
-  	<%= f.label :category_id %>
-  	<%= f.collection_select :category_id, Category.all, :id, :name, {:include_blank => true } %>
-  </div>
+  
     <%= f.label :front_page %><br />
     <%= f.check_box :front_page %>
   <div class="actions">
