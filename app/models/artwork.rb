@@ -1,13 +1,14 @@
 class Artwork < ActiveRecord::Base
   has_attached_file :photo,
   					:whiny => false, 
-  					:styles => { :small => "215x120>", :large => "500x500#" }, 
+  					:styles => { :small => "215x120>", :large => "300x250>" }, 
   					:storage => :s3,
      				:s3_credentials => "#{RAILS_ROOT}/config/aws.yml",
      				:path => ":attachment/:id/:style/:filename"
      				
      				
   belongs_to :gallery
+  belongs_to :category
   
   before_create :set_up_permalink
   after_save    :expire_artwork_all_cache

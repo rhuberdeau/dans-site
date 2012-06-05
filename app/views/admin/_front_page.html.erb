@@ -7,6 +7,10 @@
       <%= artwork_fields.label :front_page %><br />
       <%= artwork_fields.check_box :front_page %>
     </div>
+    <div class ="field">
+  	  <%= artwork_fields.label :category_id %>
+  	  <%= artwork_fields.collection_select :category_id, Category.all, :id, :name, {:include_blank => true } %>
+    </div>
     </fieldset>
   <% end %>
 

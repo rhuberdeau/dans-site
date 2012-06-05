@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120306024915) do
+ActiveRecord::Schema.define(:version => 20120605031624) do
 
   create_table "articles", :force => true do |t|
     t.string   "name"
@@ -31,10 +31,18 @@ ActiveRecord::Schema.define(:version => 20120306024915) do
     t.string   "permalink"
     t.string   "description"
     t.boolean  "front_page"
+    t.integer  "category_id"
   end
 
+  add_index "artworks", ["category_id"], :name => "index_artworks_on_category_id"
   add_index "artworks", ["gallery_id"], :name => "index_artworks_on_gallery_id"
   add_index "artworks", ["permalink"], :name => "index_artworks_on_permalink"
+
+  create_table "categories", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "galleries", :force => true do |t|
     t.string   "name"

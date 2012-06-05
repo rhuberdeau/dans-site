@@ -188,7 +188,10 @@ display:none;
 ul.thumb_view li .content_block a img {
 margin:0 0 10px;
 }
-
+#sign_out_links{
+  width: 100%;
+  text-align: right;
+}
 body { background-color: #000; color: #fff; }
 
 body, p, ol, td {

@@ -19,7 +19,7 @@ class GalleriesController < ApplicationController
   # GET /galleries/1.xml
   def show
     @gallery = Gallery.find_by_permalink(params[:id])
-    @artworks = @gallery.artworks
+    @artworks = @gallery.artworks.order('category_id ASC')
 	@title = "#{@gallery.name} Gallery"
     respond_to do |format|
       format.html # show.html.erb

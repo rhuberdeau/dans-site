@@ -7,7 +7,7 @@ class ArtworksController < ApplicationController
   cache_sweeper :artwork_sweeper
   
   def index
-  	@artworks = Artwork.front_page
+  	@artworks = Artwork.front_page.order('gallery_id ASC')
   	@title = "Artwork"
     respond_to do |format|
       format.html # index.html.erb
@@ -51,7 +51,7 @@ class ArtworksController < ApplicationController
     respond_to do |format|
       if @artwork.save
       	flash[:notice] = "New artwork has been created"
-      	format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Artwork was successfully created.') }
+      	format.html { redirect_to(:action => :index, :controller => "/admin") }
         format.xml  { render :xml => @artwork, :status => :created, :location => @artwork }
         format.js
      else
@@ -69,7 +69,8 @@ class ArtworksController < ApplicationController
 
     respond_to do |format|
       if @artwork.update_attributes(params[:artwork])
-      	format.html { redirect_to(:action => :index, :controller => "/admin", :notice => 'Artwork was successfully updated.') }
+      	flash[:notice] = "Artwork was successfully updated."
+      	format.html { redirect_to(:action => :index, :controller => "/admin") }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
