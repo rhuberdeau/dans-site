@@ -26,11 +26,13 @@
 	  </div>
 	  
 	  <h2>Edit a Gallery</h2>
-	  <div class= "get_frontpage">
+	  <ul>
 	    <% @galleries.each do |g| %>
-	      <%= link_to "#{g.name}", frontpage_admin_path(:id => g.id), :remote => true %>
+	      <li><%= link_to "#{g.name}", frontpage_admin_path(:id => g.id), :remote => true %> |
+	      	  <%= link_to 'Destroy', g, :confirm => 'Are you sure?', :method => :delete %>
+	      </li>
 	    <% end %>
-	  </div>
+	  </ul>
 	  
 	  <div id="image-gallery"></div>
 	  

@@ -1,3 +1,9 @@
+.image_block{
+  position: relative;
+  width: 100%;
+  height: 145px;
+}
+
 h1 {
   font: normal 320%/100% Georgia, "Times New Roman", Times, serif;
   margin: 20px 0 5px 10px;

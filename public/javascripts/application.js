@@ -27,16 +27,28 @@ jQuery(document).ready(function() {
 });
 
 jQuery(document).ready(function(){
-
+    jQuery(".image_block").width('0px');
+    jQuery(".image_block").height('0px');
     jQuery("a.switch_thumb").toggle(function(){
         jQuery(this).addClass("swap");
         jQuery("ul.display").fadeOut("fast", function() {
             jQuery(this).fadeIn("fast").addClass("thumb_view");
-        });
+            var maxHeight = 0;
+        jQuery('.content_block')
+  		  .each(function() { maxHeight = Math.max(maxHeight, jQuery(this).height()); })
+    	  .height(maxHeight);
+    	jQuery(".image_block").width('100%');
+    	jQuery(".image_block").height('145px');
+    	});
+        
     }, function () {
         jQuery(this).removeClass("swap");
         jQuery("ul.display").fadeOut("fast", function() {
             jQuery(this).fadeIn("fast").removeClass("thumb_view");
+            jQuery(".content_block").height('');
+            jQuery(".image_block").width('0px');
+    		jQuery(".image_block").height('0px');
+    		
         });
     }); 
 
