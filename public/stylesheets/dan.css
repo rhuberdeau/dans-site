@@ -4,6 +4,8 @@
   height: 145px;
 }
 
+
+
 h1 {
   font: normal 320%/100% Georgia, "Times New Roman", Times, serif;
   margin: 20px 0 5px 10px;
@@ -158,6 +160,10 @@ width:754px;
 ul.display li a {
 color:#E7FF61;
 text-decoration:none;
+}
+.content_blocl {
+  float: left;
+  min-height: 145px;
 }
 ul.display li .content_block {
 padding:0 10px;

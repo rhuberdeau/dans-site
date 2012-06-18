@@ -6,6 +6,7 @@
       <div class="image_block">
         <%= link_to image_tag(artwork.photo(:small)), artwork %>
       </div>
+    
       <% unless artwork.gallery.nil? %>
         <% gallery = artwork.gallery %>
         <h2><%= link_to "#{artwork.gallery.name}", gallery_path(gallery) %></h2>
@@ -14,3 +15,4 @@
   </li>
 <% end %>  
 </ul>
+

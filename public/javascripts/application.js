@@ -27,10 +27,20 @@ jQuery(document).ready(function() {
 });
 
 jQuery(document).ready(function(){
+	 if (jQuery.browser.msie && jQuery.browser.version == "7.0" ) {
+    
+  }else {
     jQuery(".image_block").width('0px');
     jQuery(".image_block").height('0px');
+ }
+    
     jQuery("a.switch_thumb").toggle(function(){
         jQuery(this).addClass("swap");
+        if (jQuery.browser.msie && jQuery.browser.version == "7.0" ) {
+    
+  }else {
+    jQuery('#images').addClass("image_block");
+ }
         jQuery("ul.display").fadeOut("fast", function() {
             jQuery(this).fadeIn("fast").addClass("thumb_view");
             var maxHeight = 0;
@@ -46,8 +56,13 @@ jQuery(document).ready(function(){
         jQuery("ul.display").fadeOut("fast", function() {
             jQuery(this).fadeIn("fast").removeClass("thumb_view");
             jQuery(".content_block").height('');
-            jQuery(".image_block").width('0px');
-    		jQuery(".image_block").height('0px');
+            if (jQuery.browser.msie) {
+    
+  			}else {
+    		  jQuery(".image_block").width('0px');
+    		  jQuery(".image_block").height('0px');
+ 			}
+            
     		
         });
     }); 
@@ -101,4 +116,6 @@ jQuery(document).ready(function() {
 jQuery(document).ready(function() {
   jQuery("#new_gallery").submitWithAjax();	
 })
+
+
 
