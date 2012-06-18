@@ -161,10 +161,6 @@ ul.display li a {
 color:#E7FF61;
 text-decoration:none;
 }
-.content_blocl {
-  float: left;
-  min-height: 145px;
-}
 ul.display li .content_block {
 padding:0 10px;
 

@@ -56,7 +56,7 @@ jQuery(document).ready(function(){
         jQuery("ul.display").fadeOut("fast", function() {
             jQuery(this).fadeIn("fast").removeClass("thumb_view");
             jQuery(".content_block").height('');
-            if (jQuery.browser.msie) {
+            if (jQuery.browser.msie ) {
     
   			}else {
     		  jQuery(".image_block").width('0px');
