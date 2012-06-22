@@ -27,46 +27,42 @@ jQuery(document).ready(function() {
 });
 
 jQuery(document).ready(function(){
-	 if (jQuery.browser.msie && jQuery.browser.version == "7.0" ) {
+   var maxHeight = 0;
+   jQuery('.content_block')
+     .each(function() { maxHeight = Math.max(maxHeight, jQuery(this).height()); })
+     .height(maxHeight);
+   jQuery(".image_block").width('100%');
+   jQuery(".image_block").height('145px'); 
     
-  }else {
-    jQuery(".image_block").width('0px');
-    jQuery(".image_block").height('0px');
- }
+   jQuery("a.switch_thumb").toggle(function(){
+     jQuery(this).addClass("swap");
+     if (jQuery.browser.msie && jQuery.browser.version == "7.0" ) {
     
-    jQuery("a.switch_thumb").toggle(function(){
-        jQuery(this).addClass("swap");
-        if (jQuery.browser.msie && jQuery.browser.version == "7.0" ) {
-    
-  }else {
-    jQuery('#images').addClass("image_block");
- }
-        jQuery("ul.display").fadeOut("fast", function() {
-            jQuery(this).fadeIn("fast").addClass("thumb_view");
-            var maxHeight = 0;
-        jQuery('.content_block')
-  		  .each(function() { maxHeight = Math.max(maxHeight, jQuery(this).height()); })
-    	  .height(maxHeight);
-    	jQuery(".image_block").width('100%');
-    	jQuery(".image_block").height('145px');
-    	});
-        
-    }, function () {
-        jQuery(this).removeClass("swap");
-        jQuery("ul.display").fadeOut("fast", function() {
-            jQuery(this).fadeIn("fast").removeClass("thumb_view");
-            jQuery(".content_block").height('');
+     }else {
+      jQuery('#images').addClass("image_block");
+ 	 }
+     jQuery("ul.display").fadeOut("fast", function() {
+       jQuery(this).fadeIn("fast").removeClass("thumb_view");
+       jQuery(".content_block").height('');
             if (jQuery.browser.msie ) {
-    
+    		  
   			}else {
     		  jQuery(".image_block").width('0px');
     		  jQuery(".image_block").height('0px');
  			}
-            
-    		
+     });
+    }, function () {
+        jQuery(this).removeClass("swap");
+        jQuery("ul.display").fadeOut("fast", function() {
+          jQuery(this).fadeIn("fast").addClass("thumb_view");
+          var maxHeight = 0;
+   		  jQuery('.content_block')
+     	  	.each(function() { maxHeight = Math.max(maxHeight, jQuery(this).height()); })
+     		.height(maxHeight);
+   		  jQuery(".image_block").width('100%');
+   		  jQuery(".image_block").height('145px'); 
         });
     }); 
-
 });
 
 jQuery(document).ready(function() {

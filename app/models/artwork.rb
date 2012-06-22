@@ -7,7 +7,7 @@ class Artwork < ActiveRecord::Base
      				:path => ":attachment/:id/:style/:filename"
      				
      				
-  belongs_to :gallery
+  belongs_to :gallery, :counter_cache => true
   belongs_to :category
   
   before_create :set_up_permalink

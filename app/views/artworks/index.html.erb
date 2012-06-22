@@ -1,15 +1,15 @@
 <a href="#" class="switch_thumb">Switch Thumb</a>
-<ul class="display">
+<ul class="display thumb_view">
 <% @artworks.each do |artwork| %>
   <li>
-    <div class="content_block">
+    <div id="image_container" class="content_block">
       <div class="image_block">
         <%= link_to image_tag(artwork.photo(:small)), artwork %>
       </div>
     
       <% unless artwork.gallery.nil? %>
         <% gallery = artwork.gallery %>
-        <h2><%= link_to "#{artwork.gallery.name}", gallery_path(gallery) %></h2>
+        <h2><%= link_to "#{artwork.gallery.name}...", gallery_path(gallery) %></h2>
       <% end %>
     </div>
   </li>

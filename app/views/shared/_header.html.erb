@@ -5,7 +5,7 @@
         <%= link_to 'Artwork', artworks_path %>
         <!--Subnav Starts Here-->
         <span>
-        	<% @galleries = Gallery.limit(2).order("name ASC") %>
+        	<% @galleries = Gallery.limit(2).order("artworks_count DESC") %>
             <% @galleries.each do |gallery|%>
 			  <%= link_to "#{gallery.name}", gallery %>|
 			<% end %>

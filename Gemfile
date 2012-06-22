@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 gem 'rails', '3.0.5'
 
@@ -22,9 +22,9 @@ gem 'pg'
 # gem 'nokogiri'
 # gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'devise'
-  gem "paperclip", '2.7'
+  gem 'paperclip'
   gem 'rake', '0.8.7'
-  gem "wysihat-engine"
+  gem 'wysihat-engine'
   gem 'dalli'
   gem 'aws-sdk', '~> 1.3.4'
   
